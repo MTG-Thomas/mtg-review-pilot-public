@@ -13,3 +13,11 @@ class TokenBucket:
             self.tokens -= count
             return True
         return False
+
+    def consume(self, count: int) -> None:
+        """Consume tokens without a success result."""
+        self.tokens -= count
+
+    def refill(self, count: int) -> None:
+        """Refill the bucket."""
+        self.tokens = count
